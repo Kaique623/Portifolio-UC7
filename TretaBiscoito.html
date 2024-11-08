@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .MainFrame {
+            display: flex;
+        }
+        .frame {
+            display: flex;
+            flex-flow: column;
+            width: 250px;
+            height: 300px;
+            border: 2.5px solid black;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 3%;
+        }
+        #inputNome, #enviarButton, .contentLabel {
+            margin: 5px;
+        }
+        #enviarButton {
+            max-width: 100px;
+            align-self: center;
+            margin: 5px;
+            border-radius: 15px;
+            width: 80px;
+            height: 40px;
+            background-color: blue;
+            color: #fefbef;
+            line-height: 1px;
+            border-color: transparent;
+            font-size: 16px;
+        }
+        #inputContent{
+            font-size: 16px;
+            border-radius: 3px;
+            margin-top: 6px;
+            height: 35px;
+        }
+        .contentLabel {
+            font-size: 20px;
+        }
+        .radio, #radio{
+            display:  inline;
+            align-self: center;
+            margin-bottom: 5px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="MainFrame">
+
+        <div id="frame1" class="frame">
+            <label for="Nome" class="contentLabel">Nome:</label>
+            <input type="text" name="Nome" class="inputContent">  
+
+            <label for="Idade" class="contentLabel">Data de Nascimento:</label>
+            <input type="date" name="Idade" class="inputContent">
+
+            <label for="Biscoito" class="contentLabel" id="radio">Biscoito:</label>
+            <input type="radio" name="bisc", class="radio", id="bis">
+
+            <label for="Bolacha" class="contentLabel" id="radio" value="Biscoito">Bolacha:</label>
+            <input type="radio" name="bisc", class="radio", value="Bolacha", id="bol">
+
+            <button onclick="printNome()" id="enviarButton">Enviar</button> 
+            <button onclick="resetarInfo()" id="enviarButton">Resetar</button> 
+
+        </div> 
+    
+        <div id="frame2" class="frame">
+        </div>
+
+    </div>
+
+    <script>
+        var selectedValue = false;
+
+        function printNome(){
+            resetarInfo();
+
+            let elements = document.getElementsByTagName("input");
+            
+            for  (let i = 0; i < elements.length; i++) {
+                if (elements.item(i).name != "bisc"){
+                    let paragraph = document.createElement("p")
+                    document.getElementById("frame2").appendChild(paragraph);
+                    let newText;
+    
+                    if (elements.item(i).name == "Idade"){
+                        let birthYear = elements.item(i).value.split("-")[0];   
+    
+                        let idade = new Date().getFullYear() - birthYear;
+                        newText = document.createTextNode(elements.item(i).name + ": " + idade + " Anos");
+                    }
+                    else
+                        newText = document.createTextNode(elements.item(i).name + ": "+ elements.item(i).value);
+    
+                    paragraph.appendChild(newText);
+                }
+                else if (!selectedValue){
+                    let link;
+                    selectedValue = true;
+                    if (elements.item(i).id == "bis" & elements.item(i).checked == true )
+                        link = "https://images.vexels.com/content/133660/preview/gingerbread-man-cartoon-icon-58-417b1b.png"
+                    else
+                        link = "https://www.arcor.com.br/wp-content/uploads/2019/07/Aymor%C3%A9-Recheado-Chocolate-1.png"
+
+                    let img = document.createElement("img");
+                    img.src = link;
+                    img.height = 150;
+                    img.width = 150;
+                    document.getElementById("frame2").appendChild(img)
+                }
+            }
+        }
+
+        function resetarInfo(){
+            selectedValue = false;
+            let childrenCount =  document.getElementById("frame2").children.length;
+            for (let i = 0; i < childrenCount; i++){
+                document.getElementById("frame2").removeChild(document.getElementById("frame2").children.item(0));
+            }   
+        }
+
+    </script>
+
+</body>
+</html>

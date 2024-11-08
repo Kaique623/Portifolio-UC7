@@ -1,0 +1,39 @@
+body{
+    background-color: #222432;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#mainFrame {
+    display: grid;
+    
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #363636;
+
+    min-width: 180px;
+
+    gap: 10px;
+    padding: 20px;
+    
+    max-height: 150px;
+    
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
+
+    color-scheme: dark;
+    color: white;
+
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 20em;
+}
+
+.inputclass {
+    font-size: 15px;
+    height: 100%;
+}

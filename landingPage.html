@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tênis Landing Page</title>
+    
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvejl7bBiSPOEKyebqeJqs5oLr0tYhq6HQ4g&s">
+    <style>
+        body{
+            background: url("BackgroundImage/pinkbg.jpg"); 
+            background-size: 100%;
+        }
+        header, footer {
+            width: 100.9%;
+            background-color: rgb(245, 158, 219);
+            margin-top: -10px;
+            display: block;
+            align-self: center;    
+            margin-left: -10px;      
+        }
+        h1#Logo {
+            color: #ED55C0;
+            -webkit-text-stroke: 1px #000000;
+            width: 200px;
+            min-width: 180px;
+            display: inline;
+            margin-right: 70%;
+            width: 100%;
+        }
+        .HeaderButton {
+            text-align: left;
+            display: inline;
+        }
+        article {
+            margin-top: 15px;
+            border-style: solid;
+            border-width: 1px;
+            color: #000000;
+            max-width: 500px;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: inline-block;
+            border-radius: 10px;
+            background-color: #e57fad;
+        }
+        h2, p , li, h3{
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+        #TenisImage {
+            min-width: 320px;
+            max-width: 40%;
+            height: auto;
+        }
+        button {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        button:hover{
+            background-color: lightgray;
+        }
+        button:active{
+            background-color: gray;
+        }
+        .InLineButton {
+            margin-top: 10px;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <h1 id="Logo">O Peppa</h1>
+        <div class="HeaderButton">
+            <button> Compre Agora!</button>
+            <button> Saiba Mais</button>
+        </div>
+    </header>
+    <article>
+        <h2>Descubra o Conforto e Estilo em Cada Passo</h2>
+        <hr>
+        <p>O tênis que combina design moderno, conforto inigualável e performance máxima. Feito para quem busca o melhor em cada caminhada.</p>
+
+        <li><strong>Design Ergonômico: </strong>Desenvolvido para garantir máximo conforto durante longas caminhadas e atividades físicas.</li>
+        <li><strong>Tecnologia de Amortecimento Avançada: </strong>Com solado responsivo que absorve o impacto, proporcionando passos mais suaves.</li>
+        <li><strong>Respirabilidade Superior: </strong>Material respirável que mantém seus pés frescos e confortáveis o dia todo.</li>
+        <li><strong>Estilo Versátil: </strong>Combina com qualquer visual – perfeito para o dia a dia ou ocasiões especiais.</li>
+        <li><strong>Respirabilidade Superior: </strong>Produzido com materiais ecológicos, respeitando o meio ambiente.</li>
+        <hr>
+        <h2>Oferta Exclusiva de Lançamento!</h2>
+        <p>Garanta seu par hoje com 20% de desconto por tempo limitado!</p>
+        <p>De R$299,90 por R$239,90!</p>
+        <button>Compre Já!</button>
+
+    </article>
+    
+    <img src="https://i0.wp.com/lapupa.com.br/wp-content/uploads/2021/08/peppa-pig1.png?fit=1200%2C1200&ssl=1" alt="Tenis Da Peppa" id="TenisImage">
+
+    <footer>
+
+        <button class="InLineButton">Política de Privacidade</button>
+        <button class="InLineButton">Termos de Uso</button>
+        <button class="InLineButton">Contato</button>
+        <div>
+            <img class="icon" src="https://static-00.iconduck.com/assets.00/tiktok-icon-891x1024-ozp1clb4.png" onclick="openPeppaGame()">
+            <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/800px-2021_Facebook_icon.svg.png">
+            <img class="icon" src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-three-dimensional-instagram-icon-png-image_9015419.png">
+        </div>
+
+    </footer>
+
+    <script>
+        function openPeppaGame() {
+            var mario = document.createElement("iframe");
+            mario.src = "https://openhtml5games.github.io/games-mirror/dist/mariohtml5/main.html";
+            mario.width = 700;
+            mario.height = 600;
+            document.body.appendChild(mario);
+        }
+    </script>
+</body>
+</html>

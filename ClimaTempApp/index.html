@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="MainContainer">
+        <h1>Clima</h1>
+        <img src="https://cdn.weatherapi.com/weather/64x64/day/353.png" id="imgIcon" width="64px" height="64px">
+        <hr>
+        <label for="cidadeInput">Cidade: </label>
+        <input id="cidadeInput" name="cidadeInput">
+        
+        <button id="consultarButton" onclick="consultar()">a</button>
+        <p id="data">Data: 00/00/0000 00:00</p>
+        <p id="temp">Temperatura: 00 ºC</p>
+        <p id="clima">Clima: ######</p>
+        </div> 
+
+        <script src="script.js"></script>
+</body>
+</html>
